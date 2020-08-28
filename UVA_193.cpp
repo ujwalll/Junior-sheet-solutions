@@ -51,7 +51,7 @@ void solve(int cur){
         }
         return;
     }
-    solve(cur+1);
+    //Turn into black if possible
     if(check(cur)){
         curColor[cur]=black;
         ch.push_back(cur);
@@ -59,6 +59,7 @@ void solve(int cur){
         ch.pop_back();
         curColor[cur]=white;
     }
+    solve(cur+1);//Leave it white
 }
 int main(){
     int t;
